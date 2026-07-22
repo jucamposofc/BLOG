@@ -21,6 +21,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
   line-height: 1.7;
@@ -29,7 +33,7 @@ body {
 }
 
 /* ==========================================
-   2. CABEÇALHO E NAV
+   2. CABEÇALHO E NAVEGAÇÃO
    ========================================== */
 header {
   background: var(--card-bg);
@@ -74,7 +78,7 @@ nav a:hover {
 }
 
 /* ==========================================
-   3. LAYOUT E CONTEÚDO PRINCIPAL
+   3. LAYOUT PRINCIPAL (GRID)
    ========================================== */
 .container {
   max-width: 1050px;
@@ -130,7 +134,7 @@ article p {
 }
 
 /* ==========================================
-   4. E-E-A-T: CAIXA DE AUTOR E BIOGRAFIA
+   4. E-E-A-T: AUTOR E BIOGRAFIA
    ========================================== */
 .author-box {
   display: flex;
@@ -235,7 +239,7 @@ article p {
 }
 
 /* ==========================================
-   6. BLOCOS DE ADSENSE E AFILIADO
+   6. ADSENSE E AFILIADOS
    ========================================== */
 .adsense-box {
   background: #f8f9fa;
@@ -317,6 +321,7 @@ aside {
   color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
 .sidebar-links a:hover {
@@ -350,7 +355,7 @@ footer a:hover {
 }
 
 /* ==========================================
-   8. RESPONSIVIDADE
+   8. RESPONSIVIDADE (MOBILE)
    ========================================== */
 @media (max-width: 768px) {
   .container {
