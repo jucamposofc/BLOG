@@ -1,0 +1,377 @@
+/* ==========================================
+   1. VARIÁVEIS GLOBAIS E RESET
+   ========================================== */
+:root {
+  --primary: #0d6efd;
+  --primary-hover: #0b5ed7;
+  --secondary: #198754;
+  --secondary-hover: #146c43;
+  --text: #212529;
+  --text-muted: #6c757d;
+  --bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --border: #e9ecef;
+  --affiliate-bg: #e8f5e9;
+  --affiliate-border: #1b5e20;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/* ==========================================
+   2. CABEÇALHO E NAV
+   ========================================== */
+header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+nav .logo {
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ==========================================
+   3. LAYOUT E CONTEÚDO PRINCIPAL
+   ========================================== */
+.container {
+  max-width: 1050px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+}
+
+main {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.category {
+  display: inline-block;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+article h1 {
+  font-size: 2.1rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+article h2 {
+  font-size: 1.45rem;
+  margin: 2rem 0 1rem 0;
+  color: #1a1a1a;
+  border-left: 4px solid var(--primary);
+  padding-left: 10px;
+}
+
+article p {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.lead {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #444;
+}
+
+/* ==========================================
+   4. E-E-A-T: CAIXA DE AUTOR E BIOGRAFIA
+   ========================================== */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.author-info p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.meta-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.author-bio-card {
+  background: #f1f3f5;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-top: 2.5rem;
+}
+
+.author-bio-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================
+   5. TABELA COMPARATIVA E PRÓS/CONTRAS
+   ========================================== */
+.table-responsive {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+.comparison-table th {
+  background-color: #f1f3f5;
+  font-weight: 600;
+}
+
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.pros-card {
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.cons-card {
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.pros-card h3 { color: #2e7d32; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.cons-card h3 { color: #c62828; font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+.pros-card ul, .cons-card ul, .content-list {
+  padding-left: 1.25rem;
+}
+
+.pros-card li, .cons-card li, .content-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   6. BLOCOS DE ADSENSE E AFILIADO
+   ========================================== */
+.adsense-box {
+  background: #f8f9fa;
+  border: 1px dashed #ced4da;
+  padding: 1rem;
+  text-align: center;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.ad-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.affiliate-box {
+  background: var(--affiliate-bg);
+  border-left: 5px solid var(--affiliate-border);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.affiliate-box h3 {
+  color: var(--affiliate-border);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.btn-affiliate {
+  display: inline-block;
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-affiliate:hover {
+  background: var(--secondary-hover);
+}
+
+/* ==========================================
+   7. SIDEBAR E RODAPÉ
+   ========================================== */
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.widget {
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.widget h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-links {
+  list-style: none;
+}
+
+.sidebar-links li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.sidebar-links a:hover {
+  color: var(--primary);
+}
+
+.disclaimer-text {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  background: var(--card-bg);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+footer a {
+  color: var(--text);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   8. RESPONSIVIDADE
+   ========================================== */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+  }
+
+  main {
+    padding: 1.25rem;
+  }
+
+  article h1 {
+    font-size: 1.6rem;
+  }
+
+  .pros-cons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
